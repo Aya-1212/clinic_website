@@ -1,3 +1,4 @@
+<?php // session_destroy(); ?>
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 <?php
 $result = getall('majors') ;

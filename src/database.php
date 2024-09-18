@@ -112,3 +112,15 @@ $result = mysqli_query($conn, $sql);
 //     )";
 
 // $result = mysqli_query($conn, $sql);
+// $sql = "INSERT INTO `appointments` ( `status`, `doctor_id`, `patient_id`) VALUES 
+// ('yes', 1, 7),
+// ('no',3 , 7)";
+// $result = mysqli_query($conn, $sql);
+// $sql = "INSERT INTO `appointments` ( `status`, `doctor_id`, `patient_id`) VALUES 
+// ('yes', 5, 7),
+// ('no',9 , 7)";
+// $result = mysqli_query($conn, $sql);
+
+
+
+

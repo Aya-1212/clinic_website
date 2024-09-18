@@ -1,4 +1,10 @@
-
+<?php
+// if (!getsession ('auth')){
+//     redirect("home");
+// }
+// dd($_SESSION['auth']);
+// die;
+?>
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 <?php
 if (isset($_GET['id'])) {
@@ -57,19 +63,19 @@ if (isset($_GET['id'])) {
       </div>
       <hr />
      
-      <form class="form">
+      <form class="form" method="GET" action="<?php echo url("handelBooking&p_id=7&d_id=".$id); ?>">
         <div class="form-items">
           <div class="mb-3">
             <label class="form-label required-label" for="name">Name</label>
-            <input type="text" class="form-control" id="name" required />
+            <input type="text" class="form-control" id="name"  />
           </div>
           <div class="mb-3">
             <label class="form-label required-label" for="phone">Phone</label>
-            <input type="tel" class="form-control" id="phone" required />
+            <input type="tel" class="form-control" id="phone"  />
           </div>
           <div class="mb-3">
             <label class="form-label required-label" for="email">Email</label>
-            <input type="email" class="form-control" id="email" required />
+            <input type="email" class="form-control" id="email"  />
           </div>
         </div>
         <button type="submit" class="btn btn-primary">
