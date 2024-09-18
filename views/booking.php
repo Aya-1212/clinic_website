@@ -1,3 +1,4 @@
+
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 <?php
 if (isset($_GET['id'])) {
@@ -55,6 +56,7 @@ if (isset($_GET['id'])) {
         </div>
       </div>
       <hr />
+     
       <form class="form">
         <div class="form-items">
           <div class="mb-3">
