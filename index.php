@@ -13,6 +13,9 @@ if (isset($_GET['page'])) {
         case "history":
             require_once 'views/history.php';
             break;
+            case "handelRegister":
+                require_once 'handelers/handelRegister.php';
+                break;
         case 'major':
             require_once 'views/majors.php';
             break;
