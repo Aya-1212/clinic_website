@@ -22,6 +22,5 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/styles/pages/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="public/images/logo.ico">
-
-    <title>VCar Website</title>
+    <title>VCare Website</title>
 </head>

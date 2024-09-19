@@ -1,36 +1,37 @@
 <?php
 
-function requiredVal($input) 
+function requiredVal($input)
 {
-    if (empty($input))
-    {
-        return false; 
+    if (empty($input)) {
+        return true;
     }
-    return true;
+    return false;
 }
 
-function minVal($input , $lenght) 
+function minVal($input, $lenght)
 {
-    if (strlen($input)< $lenght)
-    {
-        return false;
+    if (strlen($input) < $lenght) {
+        return true;
     }
-    return true;
+    return false;
 }
 
-function maxVal($input , $lenght) 
+function maxVal($input, $lenght)
 {
-    if (strlen($input) > $lenght)
-    {
-        return false;  
+    if (strlen($input) > $lenght) {
+        return true;
     }
-    return true;
+    return false;
 }
 
 function emailVal($email) 
 {
-   return filter_var($email, FILTER_VALIDATE_EMAIL); 
-  
+   return !filter_var($email, FILTER_VALIDATE_EMAIL); 
+
 }
 
-?>
+
+
+
+
+

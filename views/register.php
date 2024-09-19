@@ -1,7 +1,7 @@
 <?php
-if (getsession ('auth')){
-    redirect("home");
-}
+// if (getsession('auth')) {
+//     redirect("home");
+// }
 ?>
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 <div class="page-wrapper">
@@ -14,44 +14,53 @@ if (getsession ('auth')){
             </ol>
         </nav>
         <div class="d-flex flex-column gap-3 account-form mx-auto mt-5">
-        <?php
+            <?php
 
-if (isset($_SESSION['errors'])):
-    foreach ($_SESSION['errors'] as $error): ?>
-        <div class="alert alert-danger text-center">
-            <?php echo $error; ?>
-        </div>
-        <?php
-    endforeach;
-    unset($_SESSION['errors']);
-endif;
-?>
+            if (isset($_SESSION['errors'])):
+                foreach ($_SESSION['errors'] as $error): ?>
+                    <div class="alert alert-danger text-center">
+                        <?php echo $error; ?>
+                </div>
+            <?php
+                endforeach;
+            endif; ?>
+                <?php if(isset($_SESSION['success'])):?>
+                    <div class="alert alert-success text-center">
+                    <span class="text-success"><?php echo $_SESSION['success'] ?? ''; ?></span>
+                    </div>    
+                    <?php 
+                endif;
+            ?>
             <form class="form" action="<?php echo url("handelRegister"); ?>" method="POST">
                 <div class="form-items">
                     <div class="mb-3">
                         <label class="form-label required-label" for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name ="name" required>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name ="phone" required>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name ="email" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="password">password</label>
-                        <input type="password" class="form-control" id="password" name ="password" required>
+                        <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Create account</button>
             </form>
             <div class="d-flex justify-content-center gap-2">
-                <span>already have an account?</span><a class="link" href="<?php echo url("Login") ?>"> login</a>
+                <span>already have an account?</span><a class="link" href="<?php echo url("Login"); ?>"> login</a>
             </div>
         </div>
     </div>
 </div>
+<?php   
+        unset($_SESSION['errors']);
+        unset($_SESSION['success']);
 
+?>
 <?php require_once ROOT_PATH . 'inc/footer.php'; ?>
