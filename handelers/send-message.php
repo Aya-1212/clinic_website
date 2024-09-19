@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $content = sanitize(input: $_POST['content']);
     $phone = sanitize(input: $_POST['phone']);
 
-     //var_dump($_POST);
+    //var_dump($_POST);
 
 
 
