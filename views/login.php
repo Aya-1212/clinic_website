@@ -1,3 +1,8 @@
+ <?php
+//if (getsession ('auth')){
+   // redirect("home");
+//}
+?> 
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 
 <div class="page-wrapper">
@@ -10,15 +15,26 @@
             </ol>
         </nav>
         <div class="d-flex flex-column gap-3 account-form  mx-auto mt-5">
-            <form class="form">
+            <?php
+        if (isset($_SESSION['errors'])):
+    foreach ($_SESSION['errors'] as $error): ?>
+        <div class="alert alert-danger text-center">
+            <?php echo $error; ?>
+        </div>
+        <?php
+    endforeach;
+    unset($_SESSION['errors']);
+endif;
+?>
+            <form class="form" action="<?php echo url("handelLogin"); ?>" method="POST">
 
                 <div class="mb-3">
                     <label class="form-label required-label" for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label required-label" for="password">password</label>
-                    <input type="password" class="form-control" id="password" required>
+                    <input type="password" class="form-control" id="password" name="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>

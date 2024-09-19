@@ -23,5 +23,16 @@ function check ($sql){
    }
    return false;
 
+
 }
+// function checkSelectQuery($sql){
+//     global $conn;
+//     $result = mysqli_query($conn, $sql);
+//     if($result){
+//     if ($result->num_rows > 0){
+//         return true;
+//        }
+//        return false;
+//     }
+// }
 

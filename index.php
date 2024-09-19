@@ -16,6 +16,12 @@ if (isset($_GET['page'])) {
         case "handelRegister":
             require_once 'handelers/handelRegister.php';
             break;
+        case "handelBooking":
+            require_once 'handelers/handelBooking.php';
+            break;
+        case "handelLogin":
+            require_once 'handelers/handelLogin.php';
+            break;
         case 'major':
             require_once 'views/majors.php';
             break;
@@ -28,7 +34,7 @@ if (isset($_GET['page'])) {
         case 'contact':
             require_once 'views/contact.php';
             break;
-        case  "appointment":
+        case "appointment":
             require_once 'views/booking.php';
             break;
         case 'register':
