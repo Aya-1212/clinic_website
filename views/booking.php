@@ -62,8 +62,8 @@ if (isset($_GET['id'])) {
         </div>
       </div>
       <hr />
-     
-      <form class="form" method="GET" action="<?php echo url("handelBooking&p_id=7&d_id=".$id); ?>">
+    
+      <form class="form" method="GET" action="./index.php?page=handelBooking">
         <div class="form-items">
           <div class="mb-3">
             <label class="form-label required-label" for="name">Name</label>

@@ -8,7 +8,7 @@ function dd ($data){
   die;
 }
 function url($path){
-return BASE_URL."index.php?page=".$path;
+return "./index.php?page=".$path;
  die;
 }
 function redirect ($path){

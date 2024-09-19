@@ -5,7 +5,7 @@ $errors = [];
 if (checkRequestMethod("POST") && checkPostInput('email')) {
     foreach ($_POST as $key => $value) {
         $$key = sanitize($value);
-        echo $key . $value;
+        // echo $key . $value;
     }
     //val_email
     if (!requiredVal($email)) {
@@ -27,9 +27,9 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
 
     } else {
         // $hash = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "SELECT * FROM `patients` WHERE 'email' = 'nonove@mailinator.com' ";
-        if (check($sql)) {
-            $result = mysqli_query($conn, $sql);
+        $sql = "SELECT * FROM `patients` WHERE email = 'nonove@mailinator.com'";
+          $result = mysqli_query($conn, $sql);
+        if (mysqli_fetch_row($conn) > 0){
             $patient = mysqli_fetch_assoc($result);
             if (password_verify($password, $patient['password'])) {
                 $_SESSION['auth'] =
@@ -49,7 +49,9 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
             $_SESSION['errors'] = ["No such Account"];
             redirect("Login");
         }
+    }
 
     }
-}
+
+
 
