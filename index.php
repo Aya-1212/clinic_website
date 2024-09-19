@@ -1,21 +1,21 @@
 <?php
-// session_start();
+session_start();
 require_once 'src/config.php';
 require_once ROOT_PATH . 'core/db.php';
 require_once ROOT_PATH . 'core/functions.php';
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
-    switch ($_GET['page']) {
+    switch ($page) {
         case "home":
             require_once 'views/home.php';
             break;
         case "history":
             require_once 'views/history.php';
             break;
-            case "handelRegister":
-                require_once 'handelers/handelRegister.php';
-                break;
+        case "handelRegister":
+            require_once 'handelers/handelRegister.php';
+            break;
         case 'major':
             require_once 'views/majors.php';
             break;

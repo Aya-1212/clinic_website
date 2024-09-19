@@ -30,10 +30,9 @@ if (isset($_GET['doctor_id'])) {
                     src="<?php echo BASE_URL . "public/images/doctors/" . $doctor['image']; ?>"
                     alt="doctor"
                     class="img-fluid rounded-circle"
-                    height="200"
-                    width="200" />
+                    height="150"
+                    width="150" />
                 <div class="details-info d-flex flex-column gap-3">
-
                     <h4 class="card-title fw-bold"><?php echo $doctor['name']; ?></h4>
                     <h5 class="card-title fw-bold">
                         <?php echo $doctor['major']; ?>
@@ -47,7 +46,8 @@ if (isset($_GET['doctor_id'])) {
             <div class="details d-flex gap-2 align-items-center">
                 <h5><a href="<?= $doctor['location'] ?>" target="_blank">Location</a></h5>
             </div>
-
+            <a href="<?php echo url("appointment&id=" . $doctor['id']); ?>" class="btn btn-outline-primary card-button">Book an appointment
+            </a>
         </div>
     </div>
 </div>
