@@ -1,8 +1,8 @@
 <?php
-// session_start();
+session_start();
 require_once 'src/config.php';
-require_once ROOT_PATH . 'core/db.php';
-require_once ROOT_PATH . 'core/functions.php';
+require_once 'core/db.php';
+require_once 'core/functions.php';
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -13,9 +13,9 @@ if (isset($_GET['page'])) {
         case "history":
             require_once 'views/history.php';
             break;
-            case "handelRegister":
-                require_once 'handelers/handelRegister.php';
-                break;
+        case "handelRegister":
+            require_once 'handelers/handelRegister.php';
+            break;
         case 'major':
             require_once 'views/majors.php';
             break;
@@ -39,6 +39,9 @@ if (isset($_GET['page'])) {
             break;
         case 'error':
             require_once 'views/404.php';
+            break;
+        case 'send-message':
+            require_once 'handelers/send-message.php';
             break;
         default:
             require_once 'views/404.php';

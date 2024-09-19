@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-expand-md bg-blue sticky-top">
     <div class="container">
         <div class="navbar-brand">
+        <img src="assets/images/logo.png" alt="Logo" style="width: 40px; height: 40px;">
             <a class="fw-bold text-white m-0 text-decoration-none h3" href="<?php echo url("home"); ?>">VCare</a>
         </div>
         <button class="navbar-toggler btn-outline-light border-0 shadow-none" type="button"
@@ -12,10 +13,10 @@
             <div class="d-flex gap-3 flex-wrap justify-content-center" role="group">
                 <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("home"); ?>">Home</a>
                 <a type="button" class="btn btn-outline-light navigation--button"
-                    href="<?php echo url("major"); ?>">majors</a>
+                    href="<?php echo url("major"); ?>">Majors</a>
                 <a type="button" class="btn btn-outline-light navigation--button"
                     href="<?php echo url("doctor"); ?>">Doctors</a>
-                <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("Login"); ?>">login</a>
+                <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("Login"); ?>">Login</a>
             </div>
         </div>
     </div>
