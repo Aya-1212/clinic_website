@@ -1,11 +1,16 @@
 <?php
 // CREATE DATABASE
+ 
 $conn = mysqli_connect("localhost", "root", "");
+
+ 
 $sql = "CREATE DATABASE IF NOT EXISTS `clinic`";
 $result = mysqli_query($conn, $sql);
 
 // CONNECT WITH DATABASE 
+ 
 $conn = mysqli_connect("localhost", "root", "", "clinic");
+ 
 
 define("HOST_NAME", "localhost");
 define("USER_NAME", "root");

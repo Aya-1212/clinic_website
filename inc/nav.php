@@ -15,10 +15,12 @@
                     href="<?php echo url("major"); ?>">majors</a>
                 <a type="button" class="btn btn-outline-light navigation--button"
                     href="<?php echo url("doctor"); ?>">Doctors</a>
-                <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("Login"); ?>">login</a>
+                <?php if (!getsession('auth')):  ?>
+                    <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("Login"); ?>">login</a>
+                <?php else : ?>
+                    <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("history"); ?>">History</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </nav>
-
-        
