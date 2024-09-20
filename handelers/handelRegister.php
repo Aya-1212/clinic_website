@@ -47,16 +47,17 @@ if (!empty($errors)){
        redirect("register");
      }
      else{
-
+      $hash = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO `patients` (`name`, `email`, `phone`, `password`) VALUES 
-        ('$name', '$email' , '$phone', '$password')
+        ('$name', '$email' , '$phone', '$hash')
         ";
         $result = mysqli_query($conn,$sql);
+
         $id = mysqli_insert_id($conn);
         $_SESSION['auth'] = 
         ['name' => $name,
           'email' => $email,
-           'id'  => $id];
+           'id'  => "$id"];
         
        
         redirect("home");
