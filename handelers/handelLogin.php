@@ -27,9 +27,9 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
 
     } else {
         // $hash = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "SELECT * FROM `patients` WHERE email = 'nonove@mailinator.com'";
+        $sql = "SELECT * FROM `patients` WHERE `email` = '$email'";
           $result = mysqli_query($conn, $sql);
-        if (mysqli_fetch_row($conn) > 0){
+        if (mysqli_fetch_row($result) > 0){
             $patient = mysqli_fetch_assoc($result);
             if (password_verify($password, $patient['password'])) {
                 $_SESSION['auth'] =
@@ -38,8 +38,6 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
                         'email' => $email,
                         'id' => $patient['id']
                     ];
-
-
                 redirect("home");
             } else {
                 $_SESSION['errors'] = ["Password Not Correct"];

@@ -35,7 +35,6 @@ $result1 = mysqli_query($conn, $sql1);
     <div class="container">
         <h2 class="h1 fw-bold text-center my-4">majors</h2>
         <div class="d-flex flex-wrap gap-4 justify-content-center">
-
             <?php while ($majors = mysqli_fetch_assoc($result)): ?>
                 <div class="card p-2" style="width: 18rem;">
                     <img src="<?php echo BASE_URL . "public/images/majors/" . $majors['image']; ?>" class="card-img-top rounded-circle card-image-circle"
