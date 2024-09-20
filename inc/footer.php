@@ -17,8 +17,10 @@
                     <a href="<?php echo url("home"); ?>" class="link text-white">Home</a>
                     <a href="<?php echo url("major"); ?>" class="link text-white">Majors</a>
                     <a href="<?php echo url("doctor"); ?>" class="link text-white">Doctors</a>
+                    <?php  if (!getsession('auth')) :  ?>
                     <a href="<?php echo url("Login"); ?>" class="link text-white">Login</a>
                     <a href="<?php echo url("register"); ?>" class="link text-white">Register</a>
+                    <?php endif; ?>
                     <a href="<?php echo url("contact"); ?>" class="link text-white">Contact</a>
                 </div>
             </div>

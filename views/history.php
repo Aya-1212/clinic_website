@@ -1,3 +1,8 @@
+<?php
+if (getsession ('auth')){
+    redirect("home");
+}
+?>
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 <div class="page-wrapper">
     <?php require_once ROOT_PATH . 'inc/nav.php'; ?>

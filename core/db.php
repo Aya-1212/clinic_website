@@ -1,7 +1,10 @@
 <?php
 require_once  ROOT_PATH. 'src/database.php';
 
-$conn = mysqli_connect("localhost","root","","clini");function getall ($table_name){
+
+$conn = mysqli_connect( HOST_NAME , USER_NAME, PASSWORD , DATABASE_NAME);
+function getall ($table_name){
+
     global $conn;
     $sql = "SELECT * FROM `$table_name`";
     return mysqli_query($conn, $sql);
