@@ -1,7 +1,7 @@
 <?php
-// if (getsession('auth')) {
-//     redirect("home");
-// }
+if (getsession('auth')) {
+    redirect("home");
+}
 ?>
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 <div class="page-wrapper">
@@ -20,17 +20,10 @@
                 foreach ($_SESSION['errors'] as $error): ?>
                     <div class="alert alert-danger text-center">
                         <?php echo $error; ?>
-                </div>
+                    </div>
             <?php
                 endforeach;
             endif; ?>
-                <?php if(isset($_SESSION['success'])):?>
-                    <div class="alert alert-success text-center">
-                    <span class="text-success"><?php echo $_SESSION['success'] ?? ''; ?></span>
-                    </div>    
-                    <?php 
-                endif;
-            ?>
             <form class="form" action="<?php echo url("handelRegister"); ?>" method="POST">
                 <div class="form-items">
                     <div class="mb-3">
@@ -58,9 +51,9 @@
         </div>
     </div>
 </div>
-<?php   
-        unset($_SESSION['errors']);
-        unset($_SESSION['success']);
+<?php
+unset($_SESSION['errors']);
+unset($_SESSION['success']);
 
 ?>
 <?php require_once ROOT_PATH . 'inc/footer.php'; ?>

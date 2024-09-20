@@ -21,6 +21,7 @@
                     <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("Login"); ?>">login</a>
                 <?php else : ?>
                     <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("history"); ?>">History</a>
+                    <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("logout"); ?>">logout</a>
                 <?php endif; ?>
             </div>
         </div>

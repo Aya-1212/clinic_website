@@ -1,6 +1,5 @@
-<?php 
-//session_destroy();
-require_once ROOT_PATH . 'inc/header.php'; ?>
+<?php require_once ROOT_PATH . 'inc/header.php'; ?>
+
 <?php
 $result = getall('majors') ;
 $sql1 = "SELECT doctors.*, majors.title AS major FROM `doctors`
@@ -31,7 +30,6 @@ $result1 = mysqli_query($conn, $sql1);
     <div class="container">
         <h2 class="h1 fw-bold text-center my-4">Majors</h2>
         <div class="d-flex flex-wrap gap-4 justify-content-center">
-
             <?php while ($majors = mysqli_fetch_assoc($result)): ?>
             <div class="card p-2" style="width: 18rem;">
                 <img src="<?php echo "public/images/majors/" . $majors['image']; ?>"

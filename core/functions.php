@@ -8,9 +8,10 @@ function dd($data)
   echo "</pre>";
   die;
 }
+
 function url($path)
 {
-  return "index.php?page=" . $path;
+  return BASE_URL . "index.php?page=" . $path;
 }
 function redirect($path)
 {

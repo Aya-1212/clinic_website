@@ -43,12 +43,12 @@ if (checkRequestMethod("POST") && checkPostInput('name')) {
         $_SESSION['errors'] = $errors;
         redirect("register");
     } else {
+        $hash = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO `patients` (`name`, `email`, `phone`, `password`) VALUES 
-        ('$name', '$email' , '$phone', '$password')
+        ('$name', '$email' , '$phone', '$hash')
         ";
         $result = mysqli_query($conn, $sql);
-        $_SESSION['success'] = "Your registration has been completed successfully.";
         $id = mysqli_insert_id($conn);
         $_SESSION['auth'] =
             [
@@ -56,8 +56,6 @@ if (checkRequestMethod("POST") && checkPostInput('name')) {
                 'email' => $email,
                 'id'  => $id
             ];
-
-
         redirect("home");
     }
 }

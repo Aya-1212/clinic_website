@@ -1,22 +1,22 @@
 <?php
 // CREATE DATABASE
- 
-$conn = mysqli_connect("localhost", "root", "");
+
+$conn = mysqli_connect("localhost", "root", "",port:3306);
 
  
 $sql = "CREATE DATABASE IF NOT EXISTS `clinic`";
 $result = mysqli_query($conn, $sql);
 
 // CONNECT WITH DATABASE 
- 
-$conn = mysqli_connect("localhost", "root", "", "clinic");
+
+$conn = mysqli_connect("localhost", "root", "", "clini",3306);
  
 
 define("HOST_NAME", "localhost");
 define("USER_NAME", "root");
 define("PASSWORD", "");
-define("DATABASE_NAME", "clinic");
-//define("PORT", 3377);
+define("DATABASE_NAME", "clini");
+define("PORT", 3306);
 
 // CREATE TABLES
 $sql = "CREATE TABLE IF NOT EXISTS `patients`(
@@ -117,3 +117,15 @@ $result = mysqli_query($conn, $sql);
 //     )";
 
 // $result = mysqli_query($conn, $sql);
+// $sql = "INSERT INTO `appointments` ( `status`, `doctor_id`, `patient_id`) VALUES 
+// ('yes', 1, 7),
+// ('no',3 , 7)";
+// $result = mysqli_query($conn, $sql);
+// $sql = "INSERT INTO `appointments` ( `status`, `doctor_id`, `patient_id`) VALUES 
+// ('yes', 5, 7),
+// ('no',9 , 7)";
+// $result = mysqli_query($conn, $sql);
+
+
+
+
