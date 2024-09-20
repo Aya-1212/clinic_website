@@ -1,13 +1,9 @@
 <?php
 require_once  ROOT_PATH. 'src/database.php';
 
-<<<<<<< HEAD
 
 $conn = mysqli_connect("localhost","root","","clini");
-=======
-$conn = mysqli_connect( HOST_NAME , USER_NAME, PASSWORD , DATABASE_NAME ,port: PORT );
 
->>>>>>> 4f64dafd8e8cbee1a54947d9f012cafc1b3d73b3
 function getall ($table_name){
 
     global $conn;

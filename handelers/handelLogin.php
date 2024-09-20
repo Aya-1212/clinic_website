@@ -8,17 +8,17 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
         // echo $key . $value;
     }
     //val_email
-    if (!requiredVal($email)) {
+    if (requiredVal($email)) {
         $errors[] = "Email is Required";
-    } elseif (!emailVal($email)) {
+    } elseif (emailVal($email)) {
         $errors[] = "Enter a Valid Email";
     }
     //val_password
-    if (!requiredVal($password)) {
+    if (requiredVal($password)) {
         $errors[] = "Password is Required";
-    } elseif (!minVal($password, 8)) {
+    } elseif (minVal($password, 8)) {
         $errors[] = "Password Must Be More than 8 letters";
-    } elseif (!maxVal($password, 25)) {
+    } elseif (maxVal($password, 25)) {
         $errors[] = "Password Must Be Less than 25 letters";
     }
     if (!empty($errors)) {

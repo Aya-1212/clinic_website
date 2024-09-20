@@ -1,5 +1,5 @@
 <?php
-if (!getsession('auth')) {
+if (getsession('auth')) {
     redirect("home");
 }
 ?>

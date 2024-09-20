@@ -1,7 +1,7 @@
  <?php
-    //if (getsession ('auth')){
-    // redirect("home");
-    //}
+    if (getsession ('auth')){
+    redirect("home");
+    }
     ?>
  <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 

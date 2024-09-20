@@ -16,12 +16,6 @@ if (isset($_GET['page'])) {
         case "handelRegister":
             require_once 'handelers/handelRegister.php';
             break;
-<<<<<<< HEAD
-=======
-        case "handelBooking":
-            require_once 'handelers/handelBooking.php';
-            break;
->>>>>>> 4f64dafd8e8cbee1a54947d9f012cafc1b3d73b3
         case "handelLogin":
             require_once 'handelers/handelLogin.php';
             break;
