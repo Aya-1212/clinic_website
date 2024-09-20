@@ -1,6 +1,7 @@
-<?php require_once '../include/header.php'; ?>
-<?php require_once '../include/navbar.php'; ?>
-<?php require_once '../include/sidebar.php'; ?>
+<?php require_once ROOT_PATH . 'include/header.php'; ?>
+<?php require_once ROOT_PATH . 'include/navbar.php'; ?>
+<?php require_once ROOT_PATH . 'include/sidebar.php'; ?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -8,23 +9,20 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Patients</h1>
+          <h1>Doctors</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
   </section>
-
   <!-- Doctors -->
   <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-9">
-
           <!-- /.card -->
-
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Patients</h3>
+              <h3 class="card-title">Dostors</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body p-0">
@@ -33,9 +31,10 @@
                   <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Password</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Image</th>
+                    <th>Major_Name</th>
                     <th style="width: 40px">Action</th>
                   </tr>
                 </thead>
@@ -81,9 +80,7 @@
         </div>
 
   </section>
-  <!-- end doctors -->
-
-
 </div>
+  <!-- end doctors -->
 <!-- /.content-wrapper -->
-<?php require_once '../include/footer.php'; ?>
+<?php require_once ROOT_PATH . 'include/footer.php'; ?>

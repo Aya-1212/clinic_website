@@ -1,6 +1,6 @@
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 
-]<?php
+<?php
 $result = getall('majors') ;
 $sql1 = "SELECT doctors.*, majors.title AS major FROM `doctors`
 INNER JOIN `majors` ON doctors.major_id = majors.id

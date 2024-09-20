@@ -1,6 +1,6 @@
-<?php require_once "../include/header.php"; ?>
-<?php require_once "../include/navbar.php"; ?>
-<?php require_once "../include/sidebar.php"; ?>
+<?php require_once ROOT_PATH . "include/header.php"; ?>
+<?php require_once ROOT_PATH . "include/navbar.php"; ?>
+<?php require_once ROOT_PATH . "include/sidebar.php"; ?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -40,4 +40,4 @@
     </section>
 </div>
 
-<?php require_once "../include/footer.php"; ?>
+<?php require_once ROOT_PATH . "include/footer.php"; ?>
