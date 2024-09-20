@@ -1,7 +1,8 @@
 <?php
 require_once  ROOT_PATH. 'src/database.php';
 
-$conn = mysqli_connect( HOST_NAME , USER_NAME, PASSWORD , DATABASE_NAME,PORT);
+$conn = mysqli_connect( HOST_NAME , USER_NAME, PASSWORD , DATABASE_NAME  );
+
 function getall ($table_name){
     global $conn;
     $sql = "SELECT * FROM `$table_name`";
@@ -25,14 +26,4 @@ function check ($sql){
 
 
 }
-// function checkSelectQuery($sql){
-//     global $conn;
-//     $result = mysqli_query($conn, $sql);
-//     if($result){
-//     if ($result->num_rows > 0){
-//         return true;
-//        }
-//        return false;
-//     }
-// }
 

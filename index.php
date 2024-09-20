@@ -46,6 +46,9 @@ if (isset($_GET['page'])) {
         case 'error':
             require_once 'views/404.php';
             break;
+        case 'send-message':
+            require_once 'handelers/send-message.php';
+            break;
         default:
             require_once 'views/404.php';
     }

@@ -3,13 +3,10 @@
 
             <div class="col-sm order-sm-1">
                 <h1 class="h1">About Us</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa nesciunt repellendus itaque,
-                    laborum
-                    saepe
-                    enim maxime, delectus, dicta cumque error cupiditate nobis officia quam perferendis consequatur
-                    cum
-                    iure
-                    quod facere.</p>
+                <p>"At VCare, we are committed to providing an innovative platform that makes it easier for patients to communicate with the best specialist doctors.
+                 We strive to offer an easy and seamless appointment booking experience, 
+                 where users can choose the right doctor, book appointments, and share their ratings to support others. 
+                 Our goal is to improve each patient's health care experience. "</p>
             </div>
             <div class="col-sm order-sm-2">
                 <h1 class="h1">Links</h1>
