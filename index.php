@@ -41,7 +41,7 @@ if (isset($_GET['page'])) {
             require_once 'views/login.php';
             break;
         case 'logout':
-            require_once 'views/logout.php';
+            require_once 'handelers/logout.php';
             break;
         case 'error':
             require_once 'views/404.php';

@@ -1,6 +1,12 @@
 <?php require_once ROOT_PATH . "include/header.php"; ?>
 <?php require_once ROOT_PATH . "include/navbar.php"; ?>
 <?php require_once ROOT_PATH . "include/sidebar.php"; ?>
+
+<?php
+$sql =  "SELECT * FROM `majors`";
+ $result =  mysqli_query($conn , $sql);
+?>
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -16,7 +22,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="">Location</label>
-                        <input type="url" name="price" class="form-control">
+                        <input type="url" name="location" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="">Description</label>
@@ -24,11 +30,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="">Major</label>
-                        <select name="category_id" id="">
-                            <option value="Major">major1</option>
-                            <option value="Major">major2</option>
-                            <option value="Major">major3</option>
-                            <option value="Major">major4</option>
+                        <select>
+                            <?php while ($major = mysqli_fetch_assoc($result)): ?>  
+                            <option value="<?php echo $major['id'];?>"><?php echo $major['title']; ?></option>
+                            <?php endwhile; ?>
                         </select>
                     </div>
                     <div class="mb-3">
