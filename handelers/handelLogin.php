@@ -26,7 +26,7 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
         redirect("Login");
 
     } else {
-        // $hash = password_hash($password, PASSWORD_DEFAULT);
+         $hash = password_hash($password, PASSWORD_DEFAULT);
         $sql = "SELECT * FROM `patients` WHERE `email` = '$email'";
           $result = mysqli_query($conn, $sql);
         if (mysqli_fetch_row($result) > 0){
@@ -42,7 +42,7 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
             } else {
                 $_SESSION['errors'] = ["Password Not Correct"];
             }
-            // dd($patient);
+            dd($patient);
         } else {
             $_SESSION['errors'] = ["No such Account"];
             redirect("Login");

@@ -1,7 +1,7 @@
 <?php
 // CREATE DATABASE
 
-$conn = mysqli_connect("localhost", "root", "",port:3306);
+$conn = mysqli_connect("localhost", "root", "");
 
  
 $sql = "CREATE DATABASE IF NOT EXISTS `clinic`";
@@ -9,14 +9,14 @@ $result = mysqli_query($conn, $sql);
 
 // CONNECT WITH DATABASE 
 
-$conn = mysqli_connect("localhost", "root", "", "clini",3306);
+$conn = mysqli_connect("localhost", "root", "", "clinic");
  
 
 define("HOST_NAME", "localhost");
 define("USER_NAME", "root");
 define("PASSWORD", "");
-define("DATABASE_NAME", "clini");
-define("PORT", 3306);
+define("DATABASE_NAME", "clinic");
+//define("PORT", 3306);
 
 // CREATE TABLES
 $sql = "CREATE TABLE IF NOT EXISTS `patients`(
