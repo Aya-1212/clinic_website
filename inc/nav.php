@@ -22,7 +22,6 @@
                 <?php else : ?>
                     <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("history"); ?>">History</a>
                 <?php endif; ?>
-                <a type="button" class="btn btn-outline-light navigation--button" href="<?php echo url("Login"); ?>">Login</a>
             </div>
         </div>
     </div>
