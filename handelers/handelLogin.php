@@ -2,11 +2,14 @@
 require_once ROOT_PATH . 'core/functions.php';
 require_once ROOT_PATH . 'core/validations.php';
 $errors = [];
+
 if (checkRequestMethod("POST") && checkPostInput('email')) {
     foreach ($_POST as $key => $value) {
         $$key = sanitize($value);
-        // echo $key . $value;
+       // echo $key . $value;
     }
+
+
     //val_email
     if (requiredVal($email)) {
         $errors[] = "Email is Required";
@@ -26,27 +29,26 @@ if (checkRequestMethod("POST") && checkPostInput('email')) {
         redirect("Login");
 
     } else {
-        // $hash = password_hash($password, PASSWORD_DEFAULT);
+         $hash = password_hash($password, PASSWORD_DEFAULT);
         $sql = "SELECT * FROM `patients` WHERE `email` = '$email'";
           $result = mysqli_query($conn, $sql);
-        if (mysqli_fetch_row($result) > 0){
+          $row= mysqli_fetch_row($result) ;
+        if ($row){
             $patient = mysqli_fetch_assoc($result);
-            if (password_verify($password, $patient['password'])) {
-                $_SESSION['auth'] =
-                    [
-                        'name' => $patient['name'],
-                        'email' => $email,
-                        'id' => $patient['id']
-                    ];
+            // dd($patient);
+            // die;
+            if (!$patient) {
+                $_SESSION['auth'] = [
+                    'name' => $patient['name'],
+                    'email' => $patient['email'],
+                    'id' => $patient['id']
+                ];
                 redirect("home");
             } else {
-                $_SESSION['errors'] = ["Password Not Correct"];
+                $_SESSION['errors'] = ["No such Account"];
+                redirect("Login");
             }
-            // dd($patient);
-        } else {
-            $_SESSION['errors'] = ["No such Account"];
-            redirect("Login");
-        }
+        }  
     }
 
     }

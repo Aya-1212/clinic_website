@@ -6,6 +6,7 @@ $conn = mysqli_connect("localhost", "root", "", "clinic");
 //, port: PORT
 function getall($table_name)
 {
+
     global $conn;
     $sql = "SELECT * FROM `$table_name`";
     return mysqli_query($conn, $sql);

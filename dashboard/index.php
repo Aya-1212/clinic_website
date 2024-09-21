@@ -5,6 +5,7 @@ require_once ROOT_PATH. 'src/connection.php';
 require_once '../core/functions.php';
 require_once '../core/validations.php';
 
+
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
     switch ($page) {
@@ -22,9 +23,6 @@ if (isset($_GET['page'])) {
             break;
         case "table-majors":
             require_once "views/majors.php";
-            break;
-        case "add-major":
-            require_once "views/add-major.php";
             break;
         case "table-messages":
             require_once "views/messages.php";
@@ -44,6 +42,39 @@ if (isset($_GET['page'])) {
         case "handle-register":
             require_once "handlers/handle-register.php";
             break;    
+        case "add-major":
+            require_once "views/add-major.php";
+            break;
+        case "add_message":
+            require_once "views/add-message.php";
+            break;
+        case "add-patient":
+            require_once "views/add-patient.php";
+            break;
+        case "addPatient":
+            require_once "handelers/addPatient.php";
+            break;
+        case "add_major":
+            require_once "handelers/addMajor.php";
+            break;
+        case "insert_message":
+            require_once "handelers/insert_message.php";
+            break;
+        case "deleteDoctor":
+            require_once "handelers/deleteDoctor.php";
+            break;
+        case "deletePatients":
+            require_once "handelers/deletepatients.php";
+            break;
+        case "deleteMajor":
+            require_once "handelers/deleteMajor.php";
+            break;
+        case "add_doctor":
+            require_once "handelers/insert_doctor.php";
+            break;
+        case 'delete_message':
+            require_once 'handelers/deleteMessage.php';
+            break;
         default:
             require_once 'views/404.php';
     }

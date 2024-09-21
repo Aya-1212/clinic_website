@@ -1,14 +1,14 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #003366;">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <img src="<?php echo BASE_URL . "dist/img/AdminLTELogo.png"; ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Admin</span>
+        <img src="../assets/images/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Vcare</span>
     </a>
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?php echo BASE_URL . "dist/img/user2-160x160.jpg"; ?>" class="img-circle elevation-2" alt="User Image">
+                <img src="../assets/images/doctor.gif" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">Admin name</a>
@@ -21,16 +21,16 @@
                with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
                     <a href="<?= url("home"); ?>" class="nav-link ">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-                        </p>
+                    <img src="../assets/images/dashboard.gif" alt="Dashboard" style="width: 20px; height: 20px;" />
+                    <p>Dashboard</p>
+
                     </a>
                 </li>
                 <!-- -- dropDown---->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-user-doctor"></i>
+                    <img src="../assets/images/healthcare.gif" alt="Dashboard" style="width: 20px; height: 20px;" />
+
                         <p>
                             Doctors
                             <i class="fas fa-angle-left right"></i>
@@ -53,7 +53,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+<<<<<<< HEAD
                         <i class="nav-icon fa fa-user" aria-hidden="true"></i>
+=======
+                    <img src="../assets/images/head.gif" alt="patients" style="width: 20px; height: 20px;" />
+
+>>>>>>> 53e2d6c63c8cd8443648541cfe74cb44e92273f2
                         <p>Patients</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
@@ -64,11 +69,21 @@
                                 <p>Table</p>
                             </a>
                         </li>
+<<<<<<< HEAD
+=======
+                        <li class="nav-item">
+                            <a href="<?= url("add-patient"); ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add</p>
+                            </a>
+                        </li>
+>>>>>>> 53e2d6c63c8cd8443648541cfe74cb44e92273f2
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fa-regular fa-id-card"></i>
+                    <img src="../assets/images/healthcare.png" alt="majors" style="width: 20px; height: 20px;" />
+
                         <p>Majors</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
@@ -89,7 +104,8 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-calendar-days"></i>
+                    <img src="../assets/images/calendar2.gif" alt="appointments" style="width: 20px; height: 20px;" />
+
                         <p>Appointements</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
@@ -104,7 +120,8 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fa-regular fa-message"></i>
+                    <img src="../assets/images/message.gif" alt="appointments" style="width: 20px; height: 20px;" />
+
                         <p>Messages</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
@@ -113,6 +130,13 @@
                             <a href="<?= url("table-messages"); ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Table</p>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= url("add_message"); ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add</p>
                             </a>
                         </li>
                     </ul>

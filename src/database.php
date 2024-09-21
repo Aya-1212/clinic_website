@@ -1,6 +1,7 @@
 <?php
 // CREATE DATABASE
 //,port:3377
+
 $conn = mysqli_connect("localhost", "root", "");
 
  
@@ -9,6 +10,8 @@ $result = mysqli_query($conn, $sql);
 
 // CONNECT WITH DATABASE 
 //,3377
+
+
 $conn = mysqli_connect("localhost", "root", "", "clinic");
  
 
