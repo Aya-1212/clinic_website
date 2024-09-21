@@ -41,8 +41,5 @@ function checkPostInput($input)
 
 
 function sanitize ($input){
-
-
   return trim(htmlspecialchars(htmlentities($input)));
-
 }

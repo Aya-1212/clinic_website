@@ -1,7 +1,9 @@
 <?php
 session_start();
 require_once 'src/config.php';
+require_once ROOT_PATH. 'src/connection.php';
 require_once '../core/functions.php';
+require_once '../core/validations.php';
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -33,9 +35,15 @@ if (isset($_GET['page'])) {
         case "login":
             require_once "views/login.php";
             break;
+        case "handle-login":
+            require_once "handlers/handle-login.php";  
+            break;  
         case "register":
             require_once "views/register.php";
             break;
+        case "handle-register":
+            require_once "handlers/handle-register.php";
+            break;    
         default:
             require_once 'views/404.php';
     }

@@ -1,8 +1,4 @@
 <?php
-//  dd($_POST);
-
-
-require_once ROOT_PATH . 'core/functions.php';
 require_once ROOT_PATH . 'core/validations.php';
 
 // validate

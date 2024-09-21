@@ -1,22 +1,22 @@
 <?php
 // CREATE DATABASE
-
-$conn = mysqli_connect("localhost", "root", "",port:3306);
+//,port:3377
+$conn = mysqli_connect("localhost", "root", "");
 
  
 $sql = "CREATE DATABASE IF NOT EXISTS `clinic`";
 $result = mysqli_query($conn, $sql);
 
 // CONNECT WITH DATABASE 
-
-$conn = mysqli_connect("localhost", "root", "", "clini",3306);
+//,3377
+$conn = mysqli_connect("localhost", "root", "", "clinic");
  
 
 define("HOST_NAME", "localhost");
 define("USER_NAME", "root");
 define("PASSWORD", "");
-define("DATABASE_NAME", "clini");
-define("PORT", 3306);
+define("DATABASE_NAME", "clinic");
+// define("PORT", 3377);
 
 // CREATE TABLES
 $sql = "CREATE TABLE IF NOT EXISTS `patients`(
@@ -68,24 +68,13 @@ $sql = "CREATE TABLE IF NOT EXISTS `messages` (
        )";
 $result = mysqli_query($conn, $sql);
 
-$sql = "CREATE TABLE IF NOT EXISTS `FAQ` (
-        `id` INT PRIMARY KEY AUTO_INCREMENT,
-        `answer` TEXT NOT NULL,
-        `image` VARCHAR(200) NOT NULL,
-        `question` VARCHAR(200) NOT NULL
-     )";
+$sql = "CREATE TABLE IF NOT EXISTS `admins`(
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`name` varchar(200) not null,
+`email` varchar(200) not null,
+`password` VARCHAR(200) NOT NULL
+)";
 
-$result = mysqli_query($conn, $sql);
-
-$sql = "CREATE TABLE IF NOT EXISTS `reviews`(
-  `id` INT PRIMARY KEY  AUTO_INCREMENT,
-  `comment` TEXT NOT NULL,
-  `rating` SMALLINT NOT NULL,
-  `doctor_id` INT NOT NULL,
-  FOREIGN KEY (`doctor_id`) REFERENCES `doctors` (`id`),
-  `patient_id` INT NOT NULL,
-  FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`)
-    )";
 $result = mysqli_query($conn, $sql);
 
 // $sql = "INSERT INTO `majors` (`title`, `image`) VALUES 
@@ -125,7 +114,3 @@ $result = mysqli_query($conn, $sql);
 // ('yes', 5, 7),
 // ('no',9 , 7)";
 // $result = mysqli_query($conn, $sql);
-
-
-
-

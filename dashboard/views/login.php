@@ -24,9 +24,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="#" method="post">
+      <form action="<?= url("handle-login"); ?>" method="POST">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" name="email" required placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" name="password" required placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -52,7 +52,7 @@
         </div>
       </form>
       <p class="mb-0">
-        <a href="register.php" class="text-center">Register a new membership</a>
+        <a href="<?= url("register"); ?>" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->
