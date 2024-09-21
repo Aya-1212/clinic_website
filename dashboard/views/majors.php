@@ -1,88 +1,82 @@
 <?php require_once ROOT_PATH . 'include/header.php'; ?>
 <?php require_once ROOT_PATH . 'include/navbar.php'; ?>
 <?php require_once ROOT_PATH . 'include/sidebar.php'; ?>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Majors</h1>
-          </div>
+
+<?php 
+  $sql = "SELECT * FROM `majors`";
+  $result = mysqli_query($conn, $sql); 
+?>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12 text-center">
+          <h1 class="font-weight-bold" style="font-size: 2em; color: #007bff;">Majors</h1>
+          <p class="font-weight-normal" style="font-size: 1.2em;">List of all registered majors</p>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
 
-    <!-- Doctors -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9">
-         
-            <!-- /.card -->
-
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Majors</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Title</th>
-                      <th>Image</th>
-                    
-                     
-                      <th style="width: 40px">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>WRITE HERE</td>
-                    <td>
-                      <div>WRITE HERE</div>
-                    </td>
-                    </tr>
-                    
-                    <tr>
-                      <td>2.</td>
-                      <td>WRITE HERE</td>
-                      <td>
-                       
-                          <div>WRITE HERE</div>
-                      
-                      </td>
-                     
-                    </tr>
-                    <tr>
-                      <td>1.</td>
-                      <td>WRITE HERE</td>
-                    <td>
-                      <div>WRITE HERE</div>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>1.</td>
-                      <td>WRITE HERE</td>
-                    <td>
-                      <div>WRITE HERE</div>
-                    </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
+  <!-- Majors -->
+  <section class="content">
+    <div class="container-fluid">
+      <?php if (isset($_SESSION['success'])): ?>
+        <div class="alert alert-success text-center">
+          <?php echo $_SESSION['success']; ?>
+          <?php unset($_SESSION['success']); ?>
+        </div>
+      <?php endif; ?>
+      <?php if (isset($_SESSION['errors'])): ?>
+        <div class="alert alert-danger text-center">
+          <?php echo $_SESSION['errors']; ?>
+          <?php unset($_SESSION['errors']); ?>
+        </div>
+      <?php endif; ?>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title text-center" style="font-size: 1.5em;">Majors</h3>
             </div>
-            <!-- /.card -->
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+              <table class="table table-sm" style="width: 100%; border: 1px solid #ddd;">
+                <thead>
+                  <tr>
+                    <th style="width: 10%; text-align: center; padding: 10px;">Id</th>
+                    <th style="width: 30%; text-align: center; padding: 10px;">Title</th>
+                    <th style="width: 50%; text-align: center; padding: 10px;">Image</th>
+                    <th style="width: 10%; text-align: center; padding: 10px;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php while($major = mysqli_fetch_assoc($result)): ?>
+                  <tr>
+                    <td style="text-align: center; word-wrap: break-word;"><?php echo $major['id']; ?></td>
+                    <td style="text-align: center; word-wrap: break-word;"><?php echo $major['title']; ?></td>
+                    <td style="text-align: center;">
+                      <img src="<?php echo "../public/images/majors/" . $major['image']; ?>" alt="major" class="img-fluid rounded-circle" height="100" width="120">
+                    </td>
+                    <td style="text-align: center;">
+                      <a href="<?php echo url("deleteMajor&id=" . $major['id']); ?>" class="btn btn-danger">Delete</a>
+                    </td>
+                  </tr>
+                  <?php endwhile; ?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
           </div>
- 
-    </section>
-    <!-- end doctors -->
-   
-    
-  </div>
-  <?php require_once ROOT_PATH . "include/footer.php"; ?>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end majors -->
+
+</div>
+<?php require_once ROOT_PATH . "include/footer.php"; ?>

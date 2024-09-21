@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in</title>
+  <title> Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -17,12 +17,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Admin</b>LTE</a>
+    <a href="#"><b>LOGIN</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Login to the VCare system to book medical appointments easily</p>
 
       <form action="#" method="post">
         <div class="input-group mb-3">
@@ -46,13 +46,13 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
       <p class="mb-0">
-        <a href="register.php" class="text-center">Register a new membership</a>
+        <a href="<?php echo url("register"); ?>" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->

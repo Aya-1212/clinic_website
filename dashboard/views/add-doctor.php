@@ -1,10 +1,13 @@
 <?php require_once ROOT_PATH . "include/header.php"; ?>
 <?php require_once ROOT_PATH . "include/navbar.php"; ?>
-<?php require_once ROOT_PATH . "include/sidebar.php"; ?>
+<?php require_once ROOT_PATH . "include/sidebar.php";
+?>
 
 <?php
-$sql =  "SELECT * FROM `majors`";
- $result =  mysqli_query($conn , $sql);
+
+$sql = " SELECT * FROM `majors` ";
+$result = mysqli_query($conn, $sql);
+
 ?>
 
 <div class="content-wrapper">
@@ -12,10 +15,10 @@ $sql =  "SELECT * FROM `majors`";
     <section class="content-header">
         <div class="container-fluid">
             <div class="col-8 mx-auto">
-                <h1 class="text-center p-3 my-2">
+                <h1 class="font-weight-bold text-center" style="font-size: 2em; color: #007bff;">
                     Add Doctor
                 </h1>
-                <form class="form border p-3" method="POST" action="#">
+                <form class="form border p-3" method="POST" action="<?php echo url("add_doctor"); ?>">
                     <div class="mb-3">
                         <label for="">Name</label>
                         <input type="text" name="name" class="form-control">
@@ -30,14 +33,18 @@ $sql =  "SELECT * FROM `majors`";
                     </div>
                     <div class="mb-3">
                         <label for="">Major</label>
-                        <select>
-                            <?php while ($major = mysqli_fetch_assoc($result)): ?>  
-                            <option value="<?php echo $major['id'];?>"><?php echo $major['title']; ?></option>
+                        <select name="major_id">
+                            <?php while ($major = mysqli_fetch_assoc($result)): ?>
+                                <option value="<?php echo $major['id']; ?>"><?php echo $major['title']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <input type="submit" value="Save" class="form-control text-white bg-success">
+                        <label for="image">Upload Image</label> <!-- القسم الجديد -->
+                        <input type="file" name="image" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" value="Add " class="form-control text-white bg-success">
                     </div>
                 </form>
             </div>

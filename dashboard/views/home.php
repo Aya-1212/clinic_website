@@ -25,15 +25,16 @@
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
-                <p>Doctors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <div class="inner">
+              <h3>150</h3>
+              <p>Doctors</p>
             </div>
+            <div class="icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <a href="<?php echo  url("table-doctors"); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
@@ -41,44 +42,41 @@
             <div class="small-box bg-success">
               <div class="inner">
                 <h3>53<sup style="font-size: 20px"></sup></h3>
-
                 <p>Majors</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="fas fa-stethoscope"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?php echo  url("table-majors"); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>Patients</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+          <div class="inner">
+            <h3>230</h3>
+            <p>Patients</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-user-injured"></i>
+          </div>
+          <a href="<?php echo  url("table-patients"); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Appointments</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <div class="small-box bg-info">
+            <div class="inner">
+              <h3>50</h3>
+              <p>Booked Appointments</p>
             </div>
+            <div class="icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <a href="<?php echo  url("table-appointments"); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
           </div>
           <!-- ./col -->
         </div>
