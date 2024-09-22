@@ -92,5 +92,7 @@ redirect("login");
     </section>
     <!-- /.content -->
   </div>
+
   <!-- /.content-wrapper -->
   <?php require_once ROOT_PATH . 'include/footer.php'; ?>
+

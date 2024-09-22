@@ -21,6 +21,7 @@ $result = mysqli_query($conn, $sql);
   <!-- Messages -->
   <section class="content">
     <div class="container-fluid">
+<<<<<<< HEAD
       <div class="container-fluid">
         <?php if (isset($_SESSION['success'])): ?>
           <div class="alert alert-success text-center">
@@ -85,7 +86,6 @@ $result = mysqli_query($conn, $sql);
                   </div>
                 </div>
               </div>
-
             <?php endif; ?>
           </div>
         </div>

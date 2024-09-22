@@ -23,14 +23,12 @@
                     <a href="<?= url("home"); ?>" class="nav-link ">
                     <img src="../assets/images/dashboard.gif" alt="Dashboard" style="width: 20px; height: 20px;" />
                     <p>Dashboard</p>
-
                     </a>
                 </li>
                 <!-- -- dropDown---->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                     <img src="../assets/images/healthcare.gif" alt="Dashboard" style="width: 20px; height: 20px;" />
-
                         <p>
                             Doctors
                             <i class="fas fa-angle-left right"></i>

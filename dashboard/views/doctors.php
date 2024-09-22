@@ -58,7 +58,7 @@ $result = mysqli_query($conn, $sql);
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
-                            <table class="table table-sm" style="table-layout: fixed; width: 100%; border: 1px solid #ddd;">
+                            <table class="table table-sm  table-bordered border-primary " style="table-layout: fixed; width: 100%; border: 1px solid #ddd;">
                                 <thead>
                                     <tr>
                                         <th style="width: 10%; text-align: center; padding: 10px;">Id</th>
@@ -67,7 +67,8 @@ $result = mysqli_query($conn, $sql);
                                         <th style="width: 15%; text-align: center; padding: 10px;">Location</th>
                                         <th style="width: 15%; text-align: center; padding: 10px;">Image</th>
                                         <th style="width: 15%; text-align: center; padding: 10px;">Major Name</th>
-                                        <th style="width: 10%; text-align: center; padding: 10px;">Action</th> 
+                                        <th style="width: 10%; text-align: center; padding: 10px;">Delete</th>
+                                        <th style="width: 10%; text-align: center; padding: 10px;">Edit</th>  
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,13 +80,16 @@ $result = mysqli_query($conn, $sql);
                                         <td style="text-align: center; word-wrap: break-word;"><?php echo $doctor['location']; ?></td>
                                         <td style="text-align: center;">
                                             <img src="<?php echo "../public/images/doctors/" . $doctor['image']; ?>" alt="doctor"
-                                                 class="img-fluid rounded-circle"
+                                                 class="img-fluid "
                                                  height="150"
                                                  width="150">
                                         </td>
                                         <td style="text-align: center; word-wrap: break-word;"><?php echo $doctor['major']; ?></td>
                                         <td style="text-align: center;"> 
                                             <a href="<?php echo url("deleteDoctor&id=" . $doctor['id']); ?>" class="btn btn-danger">Delete</a>
+                                        </td>
+                                        <td style="text-align: center;"> 
+                                            <a href="<?php echo url("edit-doctor&id=" . $doctor['id']); ?>" class="btn btn-success">Edit</a>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>

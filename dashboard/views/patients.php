@@ -46,7 +46,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body p-0">
-              <table class="table table-sm" style="table-layout: fixed; width: 100%; border: 1px solid #ddd;">
+              <table class="table table-sm  table-bordered border-primary " style="table-layout: fixed; width: 100%; border: 1px solid #ddd;">
                 <thead>
                   <tr>
                     <th style="width: 10%; text-align: center; padding: 10px;">Id</th>
@@ -54,7 +54,9 @@
                     <th style="width: 15%; text-align: center; padding: 10px;">Phone</th>
                     <th style="width: 25%; text-align: center; padding: 10px;">Email</th>
                     <th style="width: 20%; text-align: center; padding: 10px;">Password</th>
-                    <th style="width: 10%; text-align: center; padding: 10px;">Action</th>
+                    <th style="width: 10%; text-align: center; padding: 10px;">Delete</th>
+                    <th style="width: 10%; text-align: center; padding: 10px;">Edit</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -67,6 +69,9 @@
                     <td style="text-align: center; word-wrap: break-word;"><?php echo $patient['password']; ?></td>
                     <td style="text-align: center;">
                       <a href="<?php echo url('deletePatients&id=' . $patient['id']); ?>" class="btn btn-danger">Delete</a>
+                    </td>
+                    <td style="text-align: center;">
+                      <a href="<?php echo url('edit-patient&id=' . $patient['id']); ?>" class="btn btn-success">Edit</a>
                     </td>
                   </tr>
                 <?php endwhile; ?>

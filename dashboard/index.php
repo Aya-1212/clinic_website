@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once 'src/config.php';
 require_once ROOT_PATH. 'src/connection.php';
 require_once '../core/functions.php';
@@ -56,6 +57,12 @@ if (isset($_GET['page'])) {
         case "add_major":
             require_once "handelers/addMajor.php";
             break;
+        case "add_doctor":
+            require_once "handelers/insert_doctor.php";
+            break;
+        case "insert_message":
+            require_once "handelers/insert_message.php";
+            break;
         case "deleteDoctor":
             require_once "handelers/deleteDoctor.php";
             break;
@@ -65,11 +72,35 @@ if (isset($_GET['page'])) {
         case "deleteMajor":
             require_once "handelers/deleteMajor.php";
             break;
-        case "add_doctor":
-            require_once "handelers/insert_doctor.php";
-            break;
         case 'delete_message':
             require_once 'handelers/deleteMessage.php';
+            break;
+        case 'reject-appointment':
+            require_once 'handelers/reject-appointment.php';
+            break;
+        case 'edit-doctor':
+            require_once 'views/edit-doctor.php';
+            break;
+        case 'edit-patient':
+            require_once 'views/edit-patient.php';
+            break;
+        case 'edit-major':
+            require_once 'views/edit-major.php';
+            break;
+        case 'edit-appointment':
+            require_once 'views/edit-appointment.php';
+            break;
+        case 'update_doctor':
+            require_once 'handelers/update_doctor.php';
+            break;
+        case 'update_patient':
+            require_once 'handelers/update_patient.php';
+            break;
+        case 'update_major':
+            require_once 'handelers/update_major.php';
+            break;
+        case 'update_appointment':
+            require_once 'handelers/update_appointment.php';
             break;
         default:
             require_once 'views/404.php';
