@@ -53,6 +53,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+
                     <img src="../assets/images/head.gif" alt="patients" style="width: 20px; height: 20px;" />
 
                         <p>Patients</p>
@@ -65,12 +66,14 @@
                                 <p>Table</p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= url("add-patient"); ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add</p>
                             </a>
                         </li>
+
                     </ul>
                 </li>
                 <li class="nav-item">
