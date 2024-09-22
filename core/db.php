@@ -2,7 +2,7 @@
 require_once  ROOT_PATH . 'src/database.php';
 
 
-$conn = mysqli_connect("localhost", "root", "", "clinic");
+$conn = mysqli_connect("localhost", "root", "", "clinic",3377);
 //, port: PORT
 function getall($table_name)
 {

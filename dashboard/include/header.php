@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
     <!--------------awesome icons----->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../public/images/logo.ico">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

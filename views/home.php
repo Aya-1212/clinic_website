@@ -27,6 +27,7 @@ $result1 = mysqli_query($conn, $sql1);
             </div>
         </div>
     </div>
+
     <div class="container">
         <h2 class="h1 fw-bold text-center my-4">Majors</h2>
         <div class="d-flex flex-wrap gap-4 justify-content-center">
@@ -42,6 +43,7 @@ $result1 = mysqli_query($conn, $sql1);
             </div>
             <?php endwhile; ?>
         </div>
+        
         <h2 class="h1 fw-bold text-center my-4">Doctors</h2>
         <section class="splide home__slider__doctors mb-5">
             <div class="splide__track ">

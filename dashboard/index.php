@@ -4,7 +4,9 @@ require_once 'src/config.php';
 require_once ROOT_PATH. 'src/connection.php';
 require_once '../core/functions.php';
 require_once '../core/validations.php';
-
+// $doctors = countIds('doctors'); 
+// dd($doctors); 
+// die;
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -34,19 +36,16 @@ if (isset($_GET['page'])) {
             require_once "views/login.php";
             break;
         case "handle-login":
-            require_once "handlers/handle-login.php";  
+            require_once "handelers/handle-login.php";  
             break;  
         case "register":
             require_once "views/register.php";
             break;
         case "handle-register":
-            require_once "handlers/handle-register.php";
+            require_once "handelers/handle-register.php";
             break;    
         case "add-major":
             require_once "views/add-major.php";
-            break;
-        case "add_message":
-            require_once "views/add-message.php";
             break;
         case "add-patient":
             require_once "views/add-patient.php";
@@ -56,9 +55,6 @@ if (isset($_GET['page'])) {
             break;
         case "add_major":
             require_once "handelers/addMajor.php";
-            break;
-        case "insert_message":
-            require_once "handelers/insert_message.php";
             break;
         case "deleteDoctor":
             require_once "handelers/deleteDoctor.php";

@@ -1,22 +1,21 @@
-<?php
-// if (!getsession ('auth')){
-//     redirect("home");
-// }
-// dd($_SESSION['auth']);
-// die;
-?>
 <?php require_once ROOT_PATH . 'inc/header.php'; ?>
 <?php
-if (isset($_GET['id'])) {
-
+if (isset($_GET['id']) || $_GET['id'] != "") {
   $id = $_GET['id'];
   $sql = "SELECT * FROM `doctors` WHERE `id` = $id";
- 
-  if (check($sql)) {
-    $doctor = getRow("doctors",$id);
+  if (check($sql)){
+    $doctor = getRow("doctors", $id);
   } else {
     redirect("error");
   }
+} else {
+  redirect("doctor");
+}
+
+if(!getSession('auth')){
+  redirect("doctor");
+}else{
+  $patient = getRow("patients",$_SESSION['auth']['id']);
 }
 ?>
 <script
@@ -62,22 +61,24 @@ if (isset($_GET['id'])) {
         </div>
       </div>
       <hr />
-    
-      <form class="form" method="GET" action="./index.php?page=handelBooking">
+
+      <form class="form" method="POST" action="<?= url("handleBooking"); ?>">
         <div class="form-items">
           <div class="mb-3">
             <label class="form-label required-label" for="name">Name</label>
-            <input type="text" class="form-control" id="name"  />
+            <input type="text" class="form-control" id="name" value="<?= $patient['name']; ?>" readonly />
           </div>
           <div class="mb-3">
             <label class="form-label required-label" for="phone">Phone</label>
-            <input type="tel" class="form-control" id="phone"  />
+            <input type="tel" class="form-control" id="phone" value="<?= $patient['phone']; ?>" readonly />
           </div>
           <div class="mb-3">
             <label class="form-label required-label" for="email">Email</label>
-            <input type="email" class="form-control" id="email"  />
+            <input type="email" class="form-control" id="email" value="<?= $patient['email']; ?>" readonly />
           </div>
         </div>
+        <input type="hidden" name="patient_id" value="<?= $patient['id']; ?>">
+        <input type="hidden" name="doctor_id" value="<?= $doctor['id']; ?>">
         <button type="submit" class="btn btn-primary">
           Confirm Booking
         </button>

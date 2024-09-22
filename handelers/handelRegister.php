@@ -12,31 +12,31 @@ if (checkRequestMethod("POST") && checkPostInput('name')) {
 
     // val_name
     if (requiredVal($name)) {
-        $errors[] = "Name is Required";
+        $errors["name"] = "Name is Required";
     } elseif (minVal($name, 3)) {
-        $errors[] = "Name Must Be More than 3 letters";
+        $errors["name"] = "Name Must Be More than 3 letters";
     } elseif (maxVal($name, 25)) {
-        $errors[] = "Name Must Be Less than 25 letters";
+        $errors["name"] = "Name Must Be Less than 25 letters";
     }
     //val_email
     if (requiredVal($email)) {
-        $errors[] = "Email is Required";
+        $errors["email"] = "Email is Required";
     } elseif (emailVal($email)) {
-        $errors[] = "Enter a Valid Email";
+        $errors["email"] = "Enter a Valid Email";
     }
     //val_phone
     if (requiredVal($phone)) {
-        $errors[] = "Phone is Required";
+        $errors["phone"] = "Phone is Required";
     } elseif (strlen($phone) != 11) {
-        $errors[] = "Phone Must Be 11 Numbers";
+        $errors["phone"] = "Phone Must Be 11 Numbers";
     }
     //val_password
     if (requiredVal($password)) {
-        $errors[] = "Password is Required";
+        $errors["password"] = "Password is Required";
     } elseif (minVal($password, 8)) {
-        $errors[] = "Password Must Be More than 8 letters";
+        $errors["password"] = "Password Must Be More than 8 letters";
     } elseif (maxVal($password, 25)) {
-        $errors[] = "Password Must Be Less than 25 letters";
+        $errors["password"] = "Password Must Be Less than 25 letters";
     }
 
     if (!empty($errors)) {
@@ -44,7 +44,6 @@ if (checkRequestMethod("POST") && checkPostInput('name')) {
         redirect("register");
     } else {
         $hash = password_hash($password, PASSWORD_DEFAULT);
-
         $sql = "INSERT INTO `patients` (`name`, `email`, `phone`, `password`) VALUES 
         ('$name', '$email' , '$phone', '$hash')
         ";

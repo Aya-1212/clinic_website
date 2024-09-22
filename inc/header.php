@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,4 +22,12 @@
     <link rel="stylesheet" href="assets/styles/pages/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="public/images/logo.ico">
     <title>VCare Website</title>
+ 
+   <script>
+     <?php if (getSession('appointment-success')) : ?>
+            alert("<?= getSession('appointment-success'); ?>")
+        <?php endif;
+        unset($_SESSION['appointment-success']) ?>
+   </script>
+
 </head>

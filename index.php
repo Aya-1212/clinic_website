@@ -1,9 +1,8 @@
 <?php
-session_start(); 
-require_once 'src/config.php'; 
-require_once ROOT_PATH . 'core/db.php'; 
-require_once ROOT_PATH . 'core/functions.php'; 
-
+session_start();
+require_once 'src/config.php';
+require_once ROOT_PATH . 'core/db.php';
+require_once ROOT_PATH . 'core/functions.php';
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
     switch ($page) {
@@ -48,6 +47,9 @@ if (isset($_GET['page'])) {
             break;
         case 'send-message':
             require_once 'handelers/send-message.php';
+            break;
+        case 'handleBooking':
+            require_once 'handelers/handelBooking.php';    
             break;
         default:
             require_once 'views/404.php';

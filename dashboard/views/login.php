@@ -1,3 +1,8 @@
+<?php
+if(getsession('admin_auth') ){
+redirect("home");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

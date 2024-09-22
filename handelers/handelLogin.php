@@ -6,52 +6,64 @@ $errors = [];
 if (checkRequestMethod("POST") && checkPostInput('email')) {
     foreach ($_POST as $key => $value) {
         $$key = sanitize($value);
-       // echo $key . $value;
+        // echo $key . $value;
     }
+
+    // dd($_POST);
 
 
     //val_email
     if (requiredVal($email)) {
-        $errors[] = "Email is Required";
+        $errors["email"] = "Email is Required";
     } elseif (emailVal($email)) {
-        $errors[] = "Enter a Valid Email";
+        $errors["email"] = "Enter a Valid Email";
     }
     //val_password
     if (requiredVal($password)) {
-        $errors[] = "Password is Required";
+        $errors["password"] = "Password is Required";
     } elseif (minVal($password, 8)) {
-        $errors[] = "Password Must Be More than 8 letters";
+        $errors["password"] = "Password Must Be More than 8 letters";
     } elseif (maxVal($password, 25)) {
-        $errors[] = "Password Must Be Less than 25 letters";
+        $errors["password"] = "Password Must Be Less than 25 letters";
     }
     if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         redirect("Login");
-
     } else {
-         $hash = password_hash($password, PASSWORD_DEFAULT);
+        // dd($_POST);
+        $hash = password_hash($password, PASSWORD_DEFAULT);
         $sql = "SELECT * FROM `patients` WHERE `email` = '$email'";
-          $result = mysqli_query($conn, $sql);
-          $row= mysqli_fetch_row($result) ;
-        if ($row){
-            $patient = mysqli_fetch_assoc($result);
-            // dd($patient);
-            // die;
-            if (!$patient) {
+        $result = mysqli_query($conn, $sql);
+        $patient = mysqli_fetch_assoc($result);
+        if ($patient) {
+            if (password_verify($password, $patient['password'])) {
                 $_SESSION['auth'] = [
-                    'name' => $patient['name'],
-                    'email' => $patient['email'],
-                    'id' => $patient['id']
+                    "id" => $patient['id'],
+                    "name" => $patient['name'],
+                    "email" => $patient['email'],
                 ];
                 redirect("home");
             } else {
-                $_SESSION['errors'] = ["No such Account"];
+                $errors["password"] = "Password isn't correct";
+                $_SESSION['errors'] = $errors;
                 redirect("Login");
             }
-        }  
+        } else {
+            $errors["password"] = "No such account";
+            $_SESSION['errors'] = $errors;
+            redirect("Login");
+        }
     }
-
-    }
-
-
-
+}
+// if ($patient) {
+            //     $_SESSION['auth'] = [
+            //         'name' => $patient['name'],
+            //         'email' => $patient['email'],
+            //         'id' => $patient['id']
+            //     ];
+            //     redirect("home");
+            // } else {
+            //      $errors["password"] = "No such account";
+            //     $_SESSION['errors'] = $errors;
+            //     redirect("Login");
+            // }

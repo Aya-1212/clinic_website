@@ -1,3 +1,8 @@
+<?php
+if(getsession('admin_auth') ){
+redirect("home");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,18 +37,15 @@ if (getsession('auth')) {
         <form action="<?= url("handle-register"); ?>" method="POST">
           <div class="input-group mb-3">
             <input type="text" class="form-control" name="name" required placeholder="Full name">
-
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
               </div>
             </div>
             <span class="text-danger"><span class="danger"><?= $_SESSION['errors']['name'] ?? ''; ?></span>
-
           </div>
           <div class="input-group mb-3">
             <input type="email" class="form-control" name="email" required placeholder="Email">
-
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -60,18 +62,15 @@ if (getsession('auth')) {
               </div>
             </div>
             <span class="text-danger"><span class="danger"><?= $_SESSION['errors']['password'] ?? ''; ?></span>
-
           </div>
           <div class="input-group mb-3">
             <input type="password" class="form-control" name="password_confirm" required placeholder="Retype password">
-
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
               </div>
             </div>
             <span class="text-danger"><span class="danger"><?= $_SESSION['errors']['password_confirm'] ?? ''; ?></span>
-
           </div>
           <div class="row">
             <div class="col-8">
@@ -91,11 +90,11 @@ if (getsession('auth')) {
   <?php unset($_SESSION['errors']); ?>
   <!-- /.register-box -->
   <!-- jQuery -->
-  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="../../dist/js/adminlte.min.js"></script>
+  <script src="../dist/js/adminlte.min.js"></script>
 </body>
 
 </html>

@@ -14,33 +14,27 @@ if (getsession('auth')) {
             </ol>
         </nav>
         <div class="d-flex flex-column gap-3 account-form mx-auto mt-5">
-            <?php
-
-            if (isset($_SESSION['errors'])):
-                foreach ($_SESSION['errors'] as $error): ?>
-                    <div class="alert alert-danger text-center">
-                        <?php echo $error; ?>
-                    </div>
-            <?php
-                endforeach;
-            endif; ?>
             <form class="form" action="<?php echo url("handelRegister"); ?>" method="POST">
                 <div class="form-items">
                     <div class="mb-3">
                         <label class="form-label required-label" for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" required>
+                        <span class="text-danger"><span class="danger"><?= $_SESSION['errors']['name'] ?? ''; ?></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="phone">Phone</label>
                         <input type="tel" class="form-control" id="phone" name="phone" required>
+                        <span class="text-danger"><span class="danger"><?= $_SESSION['errors']['phone'] ?? ''; ?></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>
+                        <span class="text-danger"><span class="danger"><?= $_SESSION['errors']['email'] ?? ''; ?></span>
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="password">password</label>
                         <input type="password" class="form-control" id="password" name="password" required>
+                        <span class="text-danger"><span class="danger"><?= $_SESSION['errors']['password'] ?? ''; ?></span>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Create account</button>

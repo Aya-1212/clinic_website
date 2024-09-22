@@ -53,12 +53,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-<<<<<<< HEAD
-                        <i class="nav-icon fa fa-user" aria-hidden="true"></i>
-=======
                     <img src="../assets/images/head.gif" alt="patients" style="width: 20px; height: 20px;" />
-
->>>>>>> 53e2d6c63c8cd8443648541cfe74cb44e92273f2
                         <p>Patients</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
@@ -69,15 +64,12 @@
                                 <p>Table</p>
                             </a>
                         </li>
-<<<<<<< HEAD
-=======
                         <li class="nav-item">
                             <a href="<?= url("add-patient"); ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add</p>
                             </a>
                         </li>
->>>>>>> 53e2d6c63c8cd8443648541cfe74cb44e92273f2
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -121,7 +113,6 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                     <img src="../assets/images/message.gif" alt="appointments" style="width: 20px; height: 20px;" />
-
                         <p>Messages</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
@@ -130,13 +121,6 @@
                             <a href="<?= url("table-messages"); ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Table</p>
-                            </a>
-                        </li>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= url("add_message"); ?>" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add</p>
                             </a>
                         </li>
                     </ul>
