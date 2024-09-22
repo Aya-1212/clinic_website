@@ -1,10 +1,13 @@
 <?php
 session_start(); 
+
 require_once 'src/config.php'; 
 require_once ROOT_PATH . 'core/db.php'; 
 require_once ROOT_PATH . 'core/functions.php'; 
+
 // dd($_SESSION['auth']);
 // die();
+
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
     switch ($page) {
