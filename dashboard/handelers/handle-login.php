@@ -39,10 +39,12 @@ if (checkRequestMethod("POST")  && checkPostInput("email") && checkPostInput("pa
                 redirect("home");
             } else {
                 $errors['password'] = "Invalid password";
+                $_SESSION['errors'] = $errors;
                 redirect("login");
             }
         } else {
             $errors['password'] = "No such account";
+            $_SESSION['errors'] = $errors;
             redirect("login");
         }
     }

@@ -1,13 +1,9 @@
 <?php
 session_start();
-
 require_once 'src/config.php';
 require_once ROOT_PATH. 'src/connection.php';
 require_once '../core/functions.php';
 require_once '../core/validations.php';
-// $doctors = countIds('doctors'); 
-// dd($doctors); 
-// die;
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -102,6 +98,9 @@ if (isset($_GET['page'])) {
         case 'update_appointment':
             require_once 'handelers/update_appointment.php';
             break;
+        case "logout":
+            require_once "handelers/logout.php";   
+            break; 
         default:
             require_once 'views/404.php';
     }

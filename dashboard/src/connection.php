@@ -19,3 +19,14 @@ function isNotEmpty ($sql){
     }
     return false;
 }
+
+function tableContainsId ($sql,$needle){
+    global $conn;
+   $result = mysqli_query($conn,$sql); 
+   $ids = mysqli_fetch_assoc($result);
+   $contains= array_search($needle,$ids);
+   if($contains){
+      return true;
+   }
+   return false;
+}

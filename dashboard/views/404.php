@@ -1,3 +1,8 @@
+<?php
+if (!getsession('admin_auth')) {
+  redirect("login");
+}
+?>
 <?php require_once ROOT_PATH . 'include/header.php'; ?>
 <?php require_once ROOT_PATH . 'include/navbar.php'; ?>
 <?php require_once ROOT_PATH . 'include/sidebar.php'; ?>
