@@ -1,7 +1,7 @@
 <?php
 // CREATE DATABASE
 
-$conn = mysqli_connect("localhost", "root", "");
+$conn = mysqli_connect("localhost", "root", "","clinic");
 
  
 $sql = "CREATE DATABASE IF NOT EXISTS `clinic`";

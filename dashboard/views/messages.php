@@ -44,7 +44,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body p-0">
-              <table class="table table-sm" style="width: 100%; border: 1px solid #ddd;">
+              <table class="table table-sm  table-bordered border-primary " style="width: 100%; border: 1px solid #ddd;">
                 <thead>
                   <tr>
                     <th style="text-align: center;">Id</th>
